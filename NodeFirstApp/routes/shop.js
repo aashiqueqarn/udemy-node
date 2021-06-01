@@ -7,8 +7,10 @@ const rootDir = require('../util/path');
 const adminData = require('./admin');
 
 router.get('/', (req, res, next) => {
-    console.log('shop js',adminData.products);
-    res.sendFile(path.join(rootDir, 'views', 'shop.html')); // this path will work for both linux and windows
+    // console.log('shop js',adminData.products);
+    // res.sendFile(path.join(rootDir, 'views', 'shop.html')); // this path will work for both linux and windows
+    const products = adminData.products;
+    res.render('shop', {prods: products, docTitle: 'Shop'});
 
 });
 
