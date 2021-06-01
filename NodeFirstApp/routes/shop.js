@@ -4,9 +4,12 @@ const path = require('path');
 const router = express.Router();
 
 const rootDir = require('../util/path');
+const adminData = require('./admin');
 
 router.get('/', (req, res, next) => {
+    console.log('shop js',adminData.products);
     res.sendFile(path.join(rootDir, 'views', 'shop.html')); // this path will work for both linux and windows
+
 });
 
 module.exports = router;
